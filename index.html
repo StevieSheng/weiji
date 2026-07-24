@@ -175,7 +175,7 @@
     <div class="p-foot"><button class="settle" id="settle">收工结算今天</button><button class="curbtn" id="setCur" hidden>📍 设为当前日</button></div>
   </div>
 
-  <div class="ov-h">15 天全景 · 7/23 开跑 <span class="t">点任意一天查看 · 环形=当天完成率</span></div>
+  <div class="ov-h">15 天全景 · 7/25 开跑 <span class="t">点任意一天查看 · 环形=当天完成率</span></div>
   <div class="ov" id="ov"></div>
 
   <div class="foot">
@@ -193,21 +193,21 @@
 "use strict";
 const CAT={en:{c:"var(--c-en)",l:"英语"},sport:{c:"var(--c-sport)",l:"运动"},csapp:{c:"var(--c-csapp)",l:"CSAPP"},ai:{c:"var(--c-ai)",l:"AI"},play:{c:"var(--c-play)",l:"出去玩"},media:{c:"#14b8a6",l:"自媒体"}};
 const SCHEDULE=[
-  {full:"2026-07-23",d:"07/23",wd:"周四",type:"study",csapp:"第1章·计算机系统漫游（通读+笔记）",ai:"通读 01-Agent"},
-  {full:"2026-07-24",d:"07/24",wd:"周五",type:"study",csapp:"2.1 信息存储·进制/字节序",ai:"通读 02-RAG"},
-  {full:"2026-07-25",d:"07/25",wd:"周六",type:"study",csapp:"2.1 位运算练习",ai:"通读 03-工具调用"},
+  {full:"2026-07-25",d:"07/25",wd:"周六",type:"study",csapp:"第1章·计算机系统漫游（通读+笔记）",ai:"通读 01-Agent"},
   {full:"2026-07-26",d:"07/26",wd:"周日",type:"play"},
-  {full:"2026-07-27",d:"07/27",wd:"周一",type:"study",csapp:"2.2 整数表示·补码",ai:"通读 04-必问项"},
-  {full:"2026-07-28",d:"07/28",wd:"周二",type:"study",csapp:"2.2 练习",ai:"精读 01-Agent（ReAct 原理）"},
-  {full:"2026-07-29",d:"07/29",wd:"周三",type:"study",csapp:"2.3 整数运算·溢出",ai:"✍️ 手写 ReAct（对照 code）"},
-  {full:"2026-07-30",d:"07/30",wd:"周四",type:"study",csapp:"2.3 练习",ai:"✍️ 脱稿手写 ReAct"},
-  {full:"2026-07-31",d:"07/31",wd:"周五",type:"study",csapp:"2.4 浮点数·IEEE 754",ai:"精读 02-RAG（切割/Rerank）"},
-  {full:"2026-08-01",d:"08/01",wd:"周六",type:"study",csapp:"2.4 练习 + 第2章小结",ai:"✍️ 手写 RAG Pipeline（对照 code）"},
+  {full:"2026-07-27",d:"07/27",wd:"周一",type:"study",csapp:"2.1 信息存储·进制/字节序",ai:"通读 02-RAG"},
+  {full:"2026-07-28",d:"07/28",wd:"周二",type:"study",csapp:"2.1 位运算练习",ai:"通读 03-工具调用"},
+  {full:"2026-07-29",d:"07/29",wd:"周三",type:"study",csapp:"2.2 整数表示·补码",ai:"通读 04-必问项"},
+  {full:"2026-07-30",d:"07/30",wd:"周四",type:"study",csapp:"2.2 练习",ai:"精读 01-Agent（ReAct 原理）"},
+  {full:"2026-07-31",d:"07/31",wd:"周五",type:"study",csapp:"2.3 整数运算·溢出",ai:"✍️ 手写 ReAct（对照 code）"},
+  {full:"2026-08-01",d:"08/01",wd:"周六",type:"study",csapp:"2.3 练习",ai:"✍️ 脱稿手写 ReAct"},
   {full:"2026-08-02",d:"08/02",wd:"周日",type:"play"},
-  {full:"2026-08-03",d:"08/03",wd:"周一",type:"study",csapp:"Data Lab 入门",ai:"✍️ 脱稿手写 RAG Pipeline"},
-  {full:"2026-08-04",d:"08/04",wd:"周二",type:"study",light:true,csapp:"Data Lab（累就跳）",ai:"03/04 复习 + Function Calling 手写"},
-  {full:"2026-08-05",d:"08/05",wd:"周三",type:"study",csapp:"Data Lab 收尾 + 第2章总复习",ai:"必问项自测 + 把项目讲成面试语言"},
-  {full:"2026-08-06",d:"08/06",wd:"周四",type:"study",csapp:"第2章查漏 + 第6章预习（有余力）",ai:"模拟面试自测 + 两周总复盘、定 8 月计划"},
+  {full:"2026-08-03",d:"08/03",wd:"周一",type:"study",csapp:"2.4 浮点数·IEEE 754",ai:"精读 02-RAG（切割/Rerank）"},
+  {full:"2026-08-04",d:"08/04",wd:"周二",type:"study",csapp:"2.4 练习 + 第2章小结",ai:"✍️ 手写 RAG Pipeline（对照 code）"},
+  {full:"2026-08-05",d:"08/05",wd:"周三",type:"study",csapp:"Data Lab 入门",ai:"✍️ 脱稿手写 RAG Pipeline"},
+  {full:"2026-08-06",d:"08/06",wd:"周四",type:"study",light:true,csapp:"Data Lab（累就跳）",ai:"03/04 复习 + Function Calling 手写"},
+  {full:"2026-08-07",d:"08/07",wd:"周五",type:"study",csapp:"Data Lab 收尾 + 第2章总复习",ai:"必问项自测 + 把项目讲成面试语言"},
+  {full:"2026-08-08",d:"08/08",wd:"周六",type:"study",csapp:"第2章查漏 + 第6章预习（有余力）",ai:"模拟面试自测 + 两周总复盘、定 8 月计划"},
 ];
 const TLC={life:"var(--c-life)",en:"var(--c-en)",sport:"var(--c-sport)",media:"#14b8a6",csapp:"var(--c-csapp)",ai:"var(--c-ai)",proj:"var(--c-proj)",play:"var(--c-play)"};
 const STUDY_TL=[
