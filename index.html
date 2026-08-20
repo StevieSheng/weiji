@@ -207,7 +207,7 @@
 <div class="wrap">
   <p class="eyebrow">Crisis · 90 天倒计时</p>
   <h1>危 机</h1>
-  <p class="sub">这不是打卡表，是一张<b>战况图</b>。目标只有一个：<b>90 天内拿到年薪 50 万以上、且能真正学到东西的 offer</b>。拿不到就正式启动留学申请——两条都不算失败，但<b>原地不动算</b>。</p>
+  <p class="sub">这不是打卡表，是一张<b>战况图</b>。第一性原理：<b>90 天内，要么靠自媒体+AI 变现赚到钱，要么最快速度进一家有学习空间的公司——谁先到算谁</b>。两条都空就拆留学信封。不挑路，只看结果；<b>但原地不动一定输</b>。</p>
 
   <!-- ========== 危机仪表盘 ========== -->
   <div class="hero">
@@ -218,10 +218,12 @@
         <div class="cd-date">死线 <span id="cdDate">--</span><button id="setDl">改</button></div>
       </div>
       <div class="gap">
-        <div class="gap-row"><span class="gap-k">目标</span><span class="gap-v goal"><span class="big">≥50万</span> / 年 · 且必须能学到东西</span></div>
-        <div class="gap-note">两个条件缺一不可——只给钱不给成长的，不接；给成长但离 50 万太远的，也不接。</div>
-        <div class="gap-row"><span class="gap-k">现状</span><span class="gap-v now"><span class="big" id="nowPay">8000</span> / 月 · 工资还常常不准时</span></div>
-        <div class="gap-row"><span class="gap-k">差距</span><span class="gap-v" style="color:var(--crisis)"><span class="big" id="gapX">5.2×</span> · 这就是你必须动的理由</span></div>
+        <div class="gap-row"><span class="gap-k">路线 A</span><span class="gap-v goal"><span class="big">赚到钱</span> · 自媒体 + AI 变现，先跑通第一笔</span></div>
+        <div class="gap-note">必须是可执行的路子——能真收到钱的，不是"以后会火"的。第一笔比第一万块重要。</div>
+        <div class="gap-row"><span class="gap-k">路线 B</span><span class="gap-v goal"><span class="big">进公司</span> · 大厂中厂都行，<b>最快进去</b> + 必须有学习空间</span></div>
+        <div class="gap-note">薪资锚 ≥50万（中厂可放宽），<b>但"能不能学到东西"不可让步</b>——那正是你现在这份工缺的。速度优先于名气。</div>
+        <div class="gap-row"><span class="gap-k">现状</span><span class="gap-v now"><span class="big">8000</span> / 月 · 工资还常常不准时</span></div>
+        <div class="gap-row"><span class="gap-k">规则</span><span class="gap-v" style="color:var(--crisis)">谁先到算谁 · 到期两条都空 → 拆留学信封</span></div>
         <div class="bar"><i id="cdBar" style="width:0%"></i></div>
         <div class="gap-note" id="cdProg">倒计时按真实日期走——现实不等人。下面的打卡日历仍然由你手动控制。</div>
       </div>
@@ -230,16 +232,17 @@
     <!-- ========== 三条战线 ========== -->
     <div class="fronts">
       <div class="front" style="--fc:var(--c-media)">
-        <div class="front-h"><span class="ic">🎥</span><span class="nm">自媒体</span><span class="rk">杠杆 · 主战场</span></div>
-        <div class="front-why">你唯一带得走的资产。项目是老板的，工资是老板给的，只有账号和作品是你的——让机会主动找上门。</div>
+        <div class="front-h"><span class="ic">🎥</span><span class="nm">路线 A · 赚钱</span><span class="rk">杠杆</span></div>
+        <div class="front-why">自媒体是你唯一带得走的资产（项目是老板的，账号是你的）。它一边攒影响力让机会找上门，一边就是变现渠道本身——接活、卖工具、收咨询。</div>
         <div class="ctrs">
-          <div class="ctr" data-c="posts"><div class="cv" id="cPosts">0</div><div class="cl">已发条数</div><div class="plus">点击 +1</div></div>
+          <div class="ctr" data-c="posts"><div class="cv" id="cPosts">0</div><div class="cl">已发条数</div><div class="plus">+1</div></div>
           <div class="ctr" data-c="fans"><div class="cv" id="cFans">0</div><div class="cl">粉丝数</div><div class="plus">点击改</div></div>
+          <div class="ctr" data-c="income"><div class="cv" id="cIncome">0</div><div class="cl">已收到 ¥</div><div class="plus">点击改</div></div>
         </div>
       </div>
       <div class="front" style="--fc:var(--c-offer)">
-        <div class="front-h"><span class="ic">🎯</span><span class="nm">Offer 线</span><span class="rk">决胜局</span></div>
-        <div class="front-why">面试是免费的行业情报，也是治"我值多少钱"这个病的唯一药。不用等辞职，现在就投。</div>
+        <div class="front-h"><span class="ic">🎯</span><span class="nm">路线 B · 进公司</span><span class="rk">最快进去</span></div>
+        <div class="front-why">大厂中厂都行，唯一不可让步的是<b>有没有学习空间</b>。面试还是免费的行业情报——投递量决定速度，别在准备上磨蹭。</div>
         <div class="ctrs">
           <div class="ctr" data-c="apply"><div class="cv" id="cApply">0</div><div class="cl">投递</div><div class="plus">+1</div></div>
           <div class="ctr" data-c="interview"><div class="cv" id="cInterview">0</div><div class="cl">面试</div><div class="plus">+1</div></div>
@@ -312,7 +315,7 @@
   <div class="foot">
     <p><b>地板线是这套机制的命门。</b>你过去卡住的从来不是强度不够，是启动不了。所以规矩改成：<b>狠在目标，不狠在惩罚</b>——上面的倒计时、差距、红灯天天逼你看；但任何一天你都可以点「只做地板线」，把当天缩成三件小事，做完照样算收工、连续不断。<b>你可以做得少，但不能消失。</b></p>
     <p><b>日历不看手机时间，全由你手动：</b>📍 指针停在哪天，哪天就是"今天"。收工结算后指针自动走到下一天。只有顶部的倒计时按真实日期跑——因为现实不会等你。</p>
-    <p><b>三条战线每天都要动一动：</b>自媒体是杠杆（先攒够 30 条再谈效果）、offer 线是决胜局（投递比准备重要，投出去才有反馈）、硬功夫是底气（10 分钟也算数）。</p>
+    <p><b>两条出路每天都要动一动：</b>路线 A 赚钱（自媒体先攒够 30 条再谈效果，能收到第一笔钱就是胜利）、路线 B 进公司（投递比准备重要，最快进去 + 有学习空间才算数）、硬功夫是两条路共用的底气（10 分钟也算数）。<b>不押注哪条，谁先出结果走谁。</b></p>
     <button class="reset" id="reset">清空所有记录，重新开始</button>
   </div>
 </div>
@@ -358,7 +361,7 @@ const STUDY_TL=[
   {s:"13:00",e:"13:30",cat:"life",a:"到岗先午睡 20min，醒来列今日 top3",n:"餐后最困的半小时干脆睡掉它，醒来用清单低摩擦开工"},
   {s:"13:30",e:"15:30",cat:"ai",a:"AI/八股学习 2h（雷打不动）",n:"一上班就先锁死 AI，别被自己的项目救火吃掉；趁「上班能摸鱼」合法学"},
   {s:"15:30",e:"16:00",cat:"media",a:"剪辑并发布上午拍的口播、回几条评论",n:"发出去>发得好；回评论是最省力的涨粉动作"},
-  {s:"16:00",e:"16:30",cat:"offer",a:"Offer 线固定档：投递 / 改简历 / 联系一个人",n:"每天雷打不动动一下——90 天里这半小时决定你去哪"},
+  {s:"16:00",e:"16:30",cat:"offer",a:"出路固定档：投一份简历 / 或推进一笔变现",n:"两条路每天都要动一下——90 天里这半小时决定你去哪；谁先出结果就走谁"},
   {s:"16:30",e:"18:00",cat:"proj",a:"项目开发（把它当付你工资的客户，交付到合格线）",n:"心从里面撤出来，力气留给你自己的三条战线"},
   {s:"18:00",e:"18:30",cat:"life",a:"晚饭",n:""},
   {s:"18:30",e:"19:00",cat:"life",a:"饭后散步消食",n:"若上午没拍成口播，这时在楼下补拍"},
@@ -426,8 +429,8 @@ function tasksFor(full){
   }else{
     out.push({id:full+"|media",cat:"media",text:"拍+发一条口播（运动中抽 15min / 或下班车里）",kind:"habit",floor:true,
       fText:"发一条口播（30 秒也算）"});
-    out.push({id:full+"|offer",cat:"offer",text:"投一份简历 / 改简历 / 联系一个人",kind:"habit",floor:true,
-      fText:"动一下 offer 线（5 分钟也算）"});
+    out.push({id:full+"|offer",cat:"offer",text:"推进出路：投一份简历 / 或推进一笔变现（报价、接活、卖工具）",kind:"habit",floor:true,
+      fText:"动一下出路（投一份 或 谈一笔，5 分钟也算）"});
     out.push({id:full+"|csapp",cat:"csapp",text:day.csapp,kind:"roll",floor:true,
       fText:"学 10 分钟（CSAPP 或八股，随便哪个）"});
     out.push({id:full+"|run",cat:"sport",text:"运动 1.5h",kind:"habit"});
@@ -469,6 +472,7 @@ function renderCounters(){
   const c=STATE.counters;
   document.getElementById("cPosts").textContent=c.posts||0;
   document.getElementById("cFans").textContent=c.fans||0;
+  document.getElementById("cIncome").textContent=c.income||0;
   document.getElementById("cApply").textContent=c.apply||0;
   document.getElementById("cInterview").textContent=c.interview||0;
   document.getElementById("cOffer").textContent=c.offer||0;
@@ -504,7 +508,7 @@ function renderDay(){
       +'<div class="t-body"><div class="t-top"><span class="t-cat">'+CAT[t.cat].l+'</span><span class="t-text">'+txt+'</span>'
       +(t.floor&&!fl?'<span class="badge-floor">地板线</span>':'')
       +(t.carried?'<span class="badge-carry">补 · '+SCHEDULE[idxOf(t.from)].d+'</span>':'')+'</div>'
-      +(t.kind==="habit"&&!fl?'<div class="t-note">'+(t.cat==="play"?"今天的任务就是好好玩":t.cat==="media"?"日更不断更 · 你唯一带得走的资产":t.cat==="offer"?"决胜局 · 投出去才有反馈":"每日硬指标 · 不顺延")+'</div>':'')
+      +(t.kind==="habit"&&!fl?'<div class="t-note">'+(t.cat==="play"?"今天的任务就是好好玩":t.cat==="media"?"日更不断更 · 你唯一带得走的资产":t.cat==="offer"?"两条路都算数 · 动出去才有反馈":"每日硬指标 · 不顺延")+'</div>':'')
       +'</div></div>';
   }).join("");
 
@@ -600,9 +604,13 @@ document.getElementById("ov").addEventListener("click",e=>{
 document.querySelectorAll(".ctr[data-c]").forEach(el=>{
   el.addEventListener("click",()=>{
     const k=el.dataset.c;STATE.counters=STATE.counters||{};
-    if(k==="fans"){
-      const v=prompt("当前粉丝数（只填数字）：",STATE.counters.fans||0);
-      if(v!==null&&!isNaN(parseInt(v,10)))STATE.counters.fans=parseInt(v,10);
+    if(k==="fans"||k==="income"){
+      const label=k==="fans"?"当前粉丝数（只填数字）：":"累计真实收到的钱 ¥（只填数字）：";
+      const v=prompt(label,STATE.counters[k]||0);
+      if(v!==null&&!isNaN(parseInt(v,10))){
+        const old=STATE.counters[k]||0;STATE.counters[k]=parseInt(v,10);
+        if(k==="income"&&STATE.counters[k]>old&&old===0)pop("💰");
+      }
     }else{
       STATE.counters[k]=(STATE.counters[k]||0)+1;
       if(k==="offer")pop("🎉");
