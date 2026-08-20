@@ -133,6 +133,7 @@
   .daytl-wrap{border-bottom:1px solid var(--line-soft)}
   .daytl-toggle{width:100%;text-align:left;background:var(--surface-2);border:0;padding:9px 16px;font-size:12px;font-weight:700;color:var(--ink-soft);cursor:pointer;display:flex;align-items:center;gap:6px}
   .daytl-toggle:hover{color:var(--ink)}
+  .tlsum{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--crisis);font-weight:700;font-variant-numeric:tabular-nums;padding-right:8px}
   .daytl{max-height:0;overflow:hidden;transition:max-height .35s ease}
   .daytl.open{max-height:2600px}
   .tl-lite{margin:10px 16px 4px;padding:9px 12px;background:color-mix(in srgb,var(--warn) 13%,transparent);border-radius:9px;font-size:11.5px;color:var(--ink);line-height:1.5}
@@ -275,6 +276,20 @@
   </div>
 
   <div class="strip">
+    <button class="strip-h" data-s="pipe">🎬 自媒体产线：一条视频怎么从零到发出去<span class="cr" id="crPipe">▸</span></button>
+    <div class="strip-b" id="sbPipe"><div class="strip-in">
+      <ul>
+        <li><b>① 收料（零碎，全天）</b>——早餐 30min 刷同行 + 午饭 30min 刷资讯 + 两趟通勤听播客 + 散步想选题。<b>只收集不创作</b>，看到能用的就丢进灵感池。</li>
+        <li><b>② 洗稿写脚本（22:30–23:00，硬块）</b>——把今天收的料变成<b>明天</b>那条的脚本。洗稿不是抄：拿别人的<b>结构</b>，换成你自己的案例和观点（你有义乌一线和真实项目，这是别人抄不走的）。</li>
+        <li><b>③ 拍（08:30–10:00 运动中抽 15min）</b>——脚本昨晚写好了，今早只是照着说。<b>拍不好也发</b>，日更靠量不靠单条精致。</li>
+        <li><b>④ 剪 + 发 + 回评论（15:30–16:00，硬块）</b>——上班摸鱼档干这个。剪辑控制在 20 分钟内，别陷进精剪——那是日更第一杀手。</li>
+        <li><b>⑤ 存稿（周末补）</b>——状态好时一次拍 2–3 条囤着。<b>手里常备 3 条存货，你就永远不慌</b>：忙爆的天、没灵感的天、拍砸的天，直接放存货。</li>
+      </ul>
+      <div class="quote">这条产线的设计只为一件事：<b>让"日更"不依赖你当天的状态</b>。脚本前一晚就绪、素材有存货、剪辑限时——三道保险，断更的概率就压到最低。</div>
+    </div></div>
+  </div>
+
+  <div class="strip">
     <button class="strip-h" data-s="plan">🎓 Plan B：留学（这是选项，不是惩罚）<span class="cr" id="crPlan">▸</span></button>
     <div class="strip-b" id="sbPlan"><div class="strip-in">
       <ul>
@@ -301,7 +316,7 @@
       <button class="floorbtn" id="floorBtn">🩹 只做地板线</button>
     </div>
     <div class="daytl-wrap">
-      <button class="daytl-toggle" id="daytlToggle">⏱ 今日半小时安排 <span id="daytlCaret">▾</span></button>
+      <button class="daytl-toggle" id="daytlToggle">⏱ 今日半小时安排 <span class="tlsum" id="tlSum"></span><span id="daytlCaret">▾</span></button>
       <div class="daytl" id="daytl"></div>
     </div>
     <div class="tasks" id="tasks"></div>
@@ -316,6 +331,7 @@
     <p><b>地板线是这套机制的命门。</b>你过去卡住的从来不是强度不够，是启动不了。所以规矩改成：<b>狠在目标，不狠在惩罚</b>——上面的倒计时、差距、红灯天天逼你看；但任何一天你都可以点「只做地板线」，把当天缩成三件小事，做完照样算收工、连续不断。<b>你可以做得少，但不能消失。</b></p>
     <p><b>日历不看手机时间，全由你手动：</b>📍 指针停在哪天，哪天就是"今天"。收工结算后指针自动走到下一天。只有顶部的倒计时按真实日期跑——因为现实不会等你。</p>
     <p><b>两条出路每天都要动一动：</b>路线 A 赚钱（自媒体先攒够 30 条再谈效果，能收到第一笔钱就是胜利）、路线 B 进公司（投递比准备重要，最快进去 + 有学习空间才算数）、硬功夫是两条路共用的底气（10 分钟也算数）。<b>不押注哪条，谁先出结果走谁。</b></p>
+    <p><b>关于 12 小时怎么来的：</b>硬块 10h（英语1 + CSAPP1.5 + AI2 + 项目4 + 出路0.5 + 自媒体剪发和写脚本1）+ 零碎 2.5h（早餐/午饭刷资讯、两趟通勤听播客、散步定选题）≈ <b>12.5h</b>。<b>零碎那 2.5h 是白捡的</b>——它不占你任何一块正经时间，只是把原本刷娱乐的碎片换成了行业输入。真正要守的是那 10h 硬块。运动 1.5h、睡眠 8h 不在这 12h 里，它们是发电机不是消耗。</p>
     <button class="reset" id="reset">清空所有记录，重新开始</button>
   </div>
 </div>
@@ -350,25 +366,24 @@ const SCHEDULE=[
 ];
 const TLC={life:"var(--c-life)",en:"var(--c-en)",sport:"var(--c-sport)",media:"var(--c-media)",csapp:"var(--c-csapp)",ai:"var(--c-ai)",proj:"var(--c-proj)",play:"var(--c-play)",offer:"var(--c-offer)"};
 const STUDY_TL=[
-  {s:"07:00",e:"07:30",cat:"life",a:"起床、洗漱、喝一大杯温水、吃根香蕉垫胃",n:"23:00–07:00 睡满 8h；起床动作是全天习惯链的总开关"},
-  {s:"07:30",e:"08:00",cat:"en",a:"英语·影子跟读：一段 2-3min 音频，逐句暂停跟读",n:"练听力+口语最强单招；不背单词、张嘴才算数"},
-  {s:"08:00",e:"08:30",cat:"en",a:"英语·AI 语音对话 25min（ELSA / Talkio / ChatGPT 语音）",n:"顺便把面试和生意里要用的英语一起练了"},
-  {s:"08:30",e:"10:00",cat:"sport",a:"运动 1.5h，中途抽 15min 拍今天的口播",n:"运动给大脑点火；口播早上拍完晚上就不欠；非拍摄时耳机泛听英文"},
-  {s:"10:00",e:"10:30",cat:"life",a:"洗澡、换衣、吃高蛋白早餐",n:"运动后补蛋白，收拾干净进入学习状态"},
-  {s:"10:30",e:"12:00",cat:"csapp",a:"CSAPP 深度学习 1.5h（全天最硬的骨头）",n:"运动完+洗完澡+吃饱=脑子最清醒的黄金档；手机扔到够不着的地方"},
-  {s:"12:00",e:"12:30",cat:"life",a:"午饭（利索吃完）",n:"午睡挪到了到岗后，这里不磨蹭"},
-  {s:"12:30",e:"13:00",cat:"life",a:"通勤上班",n:"准点 13:00 到"},
+  {s:"07:00",e:"07:30",cat:"media",bits:true,a:"起床洗漱 + 边吃早餐边刷同行内容，记 3 个选题进灵感池",n:"自媒体的原料档：只收集不创作。今天洗稿写脚本全靠这半小时攒的料"},
+  {s:"07:30",e:"08:30",cat:"en",work:true,a:"英语听说 1h：影子跟读 30min + AI 语音对话 30min",n:"练听说最强组合；不背单词、张嘴才算数。工具：每日英语听力 / ELSA / ChatGPT 语音"},
+  {s:"08:30",e:"10:00",cat:"sport",a:"运动 1.5h，中途抽 15min 拍今天的口播（脚本昨晚已写好）",n:"运动给大脑点火；口播早上拍完晚上就不欠；非拍摄时耳机泛听英文或行业播客"},
+  {s:"10:00",e:"10:30",cat:"life",a:"洗澡、换衣、高蛋白早餐",n:"运动后补蛋白，收拾干净进入学习状态"},
+  {s:"10:30",e:"12:00",cat:"csapp",work:true,a:"CSAPP 深度学习 1.5h（全天最硬的骨头）",n:"运动完+洗完澡+吃饱=脑子最清醒的黄金档，把最费脑的钉在这；手机扔到够不着的地方"},
+  {s:"12:00",e:"12:30",cat:"media",bits:true,a:"午饭（边吃边刷 AI / 外贸圈最新资讯）",n:"零碎输入档：看到能用的观点、案例、数据，随手存进灵感池"},
+  {s:"12:30",e:"13:00",cat:"media",bits:true,a:"通勤上班（耳机听 AI 播客 / 行业资讯）",n:"通勤是白捡的输入时间，别刷娱乐。准点 13:00 到"},
   {s:"13:00",e:"13:30",cat:"life",a:"到岗先午睡 20min，醒来列今日 top3",n:"餐后最困的半小时干脆睡掉它，醒来用清单低摩擦开工"},
-  {s:"13:30",e:"15:30",cat:"ai",a:"AI/八股学习 2h（雷打不动）",n:"一上班就先锁死 AI，别被自己的项目救火吃掉；趁「上班能摸鱼」合法学"},
-  {s:"15:30",e:"16:00",cat:"media",a:"剪辑并发布上午拍的口播、回几条评论",n:"发出去>发得好；回评论是最省力的涨粉动作"},
-  {s:"16:00",e:"16:30",cat:"offer",a:"出路固定档：投一份简历 / 或推进一笔变现",n:"两条路每天都要动一下——90 天里这半小时决定你去哪；谁先出结果就走谁"},
-  {s:"16:30",e:"18:00",cat:"proj",a:"项目开发（把它当付你工资的客户，交付到合格线）",n:"心从里面撤出来，力气留给你自己的三条战线"},
+  {s:"13:30",e:"15:30",cat:"ai",work:true,a:"AI/八股学习 2h（雷打不动）",n:"一上班就先锁死 AI，别被项目救火吃掉；趁「上班能摸鱼」合法学，绝不拖到疲惫的晚上"},
+  {s:"15:30",e:"16:00",cat:"media",work:true,a:"自媒体产线：剪辑 + 发布今天的口播 + 回评论",n:"发出去>发得好，别陷进精剪；回评论是最省力的涨粉动作"},
+  {s:"16:00",e:"16:30",cat:"offer",work:true,a:"出路固定档：投一份简历 / 或推进一笔变现",n:"两条路每天都要动一下——这半小时决定 90 天后你在哪；谁先出结果就走谁"},
+  {s:"16:30",e:"18:00",cat:"proj",work:true,a:"项目开发 1.5h（交付到合格线就停）",n:"把它当付你工资的客户，心从里面撤出来，力气留给你自己的两条出路"},
   {s:"18:00",e:"18:30",cat:"life",a:"晚饭",n:""},
-  {s:"18:30",e:"19:00",cat:"life",a:"饭后散步消食",n:"若上午没拍成口播，这时在楼下补拍"},
-  {s:"19:00",e:"21:30",cat:"proj",a:"项目开发/收尾，末尾写明日 top3",n:"只做熟悉、有正反馈的活；想好明天第一步降低次日启动摩擦"},
-  {s:"21:30",e:"22:00",cat:"life",a:"下班通勤回家",n:"今天口播还没发的话，车里补拍是最后 backup"},
+  {s:"18:30",e:"19:00",cat:"media",bits:true,a:"散步消食 + 定明天的选题（口播没拍成就在这补拍）",n:"边走边想比坐着憋脚本高效；把明天要讲的那句话想清楚"},
+  {s:"19:00",e:"21:30",cat:"proj",work:true,a:"项目开发 2.5h，末尾 commit + 写明日 top3",n:"只做熟悉、有正反馈的活；想好明天第一步，降低次日启动摩擦"},
+  {s:"21:30",e:"22:00",cat:"media",bits:true,a:"下班通勤（听资讯 / 口播最后补拍档）",n:"今天还没发口播的话，车里是最后 backup"},
   {s:"22:00",e:"22:30",cat:"life",a:"洗澡",n:""},
-  {s:"22:30",e:"23:00",cat:"life",a:"放松，顺手备好明早运动服、打开跟读音频",n:"给懈怠一个合法出口，防报复性熬夜；23:00 熄灯睡满 8h"},
+  {s:"22:30",e:"23:00",cat:"media",work:true,a:"写明天的脚本 / 洗稿一条（30min）",n:"脚本前一晚写好，第二天拍摄只要 15 分钟——这是日更能不断的唯一关键；顺手备好明早运动服"},
 ];
 const PLAY_TL=[
   {s:"07:30",e:"08:00",cat:"life",a:"自然醒后起床、喝水洗漱",n:"周日多睡会儿回血，但不赖到中午睡乱生物钟"},
@@ -429,6 +444,8 @@ function tasksFor(full){
   }else{
     out.push({id:full+"|media",cat:"media",text:"拍+发一条口播（运动中抽 15min / 或下班车里）",kind:"habit",floor:true,
       fText:"发一条口播（30 秒也算）"});
+    out.push({id:full+"|script",cat:"media",text:"写明天的脚本 / 洗稿一条（睡前 30min）",kind:"habit",
+      note:"日更不断的唯一关键 · 今晚写好明早只用拍"});
     out.push({id:full+"|offer",cat:"offer",text:"推进出路：投一份简历 / 或推进一笔变现（报价、接活、卖工具）",kind:"habit",floor:true,
       fText:"动一下出路（投一份 或 谈一笔，5 分钟也算）"});
     out.push({id:full+"|csapp",cat:"csapp",text:day.csapp,kind:"roll",floor:true,
@@ -508,7 +525,7 @@ function renderDay(){
       +'<div class="t-body"><div class="t-top"><span class="t-cat">'+CAT[t.cat].l+'</span><span class="t-text">'+txt+'</span>'
       +(t.floor&&!fl?'<span class="badge-floor">地板线</span>':'')
       +(t.carried?'<span class="badge-carry">补 · '+SCHEDULE[idxOf(t.from)].d+'</span>':'')+'</div>'
-      +(t.kind==="habit"&&!fl?'<div class="t-note">'+(t.cat==="play"?"今天的任务就是好好玩":t.cat==="media"?"日更不断更 · 你唯一带得走的资产":t.cat==="offer"?"两条路都算数 · 动出去才有反馈":"每日硬指标 · 不顺延")+'</div>':'')
+      +(t.kind==="habit"&&!fl?'<div class="t-note">'+(t.note?t.note:t.cat==="play"?"今天的任务就是好好玩":t.cat==="media"?"日更不断更 · 你唯一带得走的资产":t.cat==="offer"?"两条路都算数 · 动出去才有反馈":"每日硬指标 · 不顺延")+'</div>':'')
       +'</div></div>';
   }).join("");
 
@@ -526,8 +543,19 @@ function timelineFor(day){
     return x;
   });
 }
+function mins(t){const p=t.split(":");return +p[0]*60+ +p[1];}
+function tlHours(rows){
+  let w=0,b=0;
+  rows.forEach(r=>{const d=(mins(r.e)-mins(r.s))/60;if(r.work)w+=d;else if(r.bits)b+=d;});
+  return{w:w,b:b,t:w+b};
+}
+function fmtH(n){return (Math.round(n*10)/10).toString().replace(/\.0$/,"");}
 function renderTimeline(){
   const day=SCHEDULE[sel],rows=timelineFor(day);
+  const h=tlHours(rows);
+  document.getElementById("tlSum").textContent=h.t>0
+    ? "硬块 "+fmtH(h.w)+"h + 零碎 "+fmtH(h.b)+"h ≈ "+fmtH(h.t)+"h"
+    : "";
   const head=day.light?'<div class="tl-lite">'+LIGHT_NOTE+'</div>':'';
   document.getElementById("daytl").innerHTML=head+rows.map(r=>
     '<div class="tl-row" style="--cat:'+TLC[r.cat]+'">'
@@ -633,7 +661,7 @@ document.querySelectorAll(".strip-h").forEach(h=>{
   });
 });
 function applyStrips(){
-  [["why","sbWhy","crWhy"],["plan","sbPlan","crPlan"]].forEach(([k,b,c])=>{
+  [["why","sbWhy","crWhy"],["pipe","sbPipe","crPipe"],["plan","sbPlan","crPlan"]].forEach(([k,b,c])=>{
     const open=!!STATE.strips[k];
     document.getElementById(b).classList.toggle("open",open);
     document.getElementById(c).textContent=open?"▾":"▸";
