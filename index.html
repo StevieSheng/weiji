@@ -324,14 +324,16 @@
     <div class="p-foot"><button class="settle" id="settle">收工结算今天</button><button class="curbtn" id="setCur" hidden>📍 设为当前日</button></div>
   </div>
 
-  <div class="ov-h">第一程 · 19 天（13 个工作日 + 周末休息） <span class="t">点任意一天查看 · 环形=完成率 · 90 天是整场战役，这是第一程</span></div>
+  <div class="ov-h">第一程 · 17 天（周日整天休息） <span class="t">点任意一天查看 · 环形=完成率 · 前 8 天热身档，8/31 起进阶档</span></div>
   <div class="ov" id="ov"></div>
 
   <div class="foot">
     <p><b>地板线是这套机制的命门。</b>你过去卡住的从来不是强度不够，是启动不了。所以规矩改成：<b>狠在目标，不狠在惩罚</b>——上面的倒计时、差距、红灯天天逼你看；但任何一天你都可以点「只做地板线」，把当天缩成三件小事，做完照样算收工、连续不断。<b>你可以做得少，但不能消失。</b></p>
     <p><b>日历不看手机时间，全由你手动：</b>📍 指针停在哪天，哪天就是"今天"。收工结算后指针自动走到下一天。只有顶部的倒计时按真实日期跑——因为现实不会等你。</p>
     <p><b>两条出路每天都要动一动：</b>路线 A 赚钱（自媒体先攒够 30 条再谈效果，能收到第一笔钱就是胜利）、路线 B 进公司（投递比准备重要，最快进去 + 有学习空间才算数）、硬功夫是两条路共用的底气（10 分钟也算数）。<b>不押注哪条，谁先出结果走谁。</b></p>
-    <p><b>关于 12 小时怎么来的：</b>硬块 10h（英语1 + CSAPP1.5 + AI2 + 项目4 + 出路0.5 + 自媒体剪发和写脚本1）+ 零碎 2.5h（早餐/午饭刷资讯、两趟通勤听播客、散步定选题）≈ <b>12.5h</b>。<b>零碎那 2.5h 是白捡的</b>——它不占你任何一块正经时间，只是把原本刷娱乐的碎片换成了行业输入。真正要守的是那 10h 硬块。运动 1.5h、睡眠 8h 不在这 12h 里，它们是发电机不是消耗。</p>
+    <p><b>循序渐进，不是一上来就满档：</b>前 8 天是<b>热身档</b>（英语 30min + CSAPP 1h + AI 1.5h），只求「每天都碰到」，不求学多少；8/31 起换<b>进阶档</b>（CSAPP 加到 1.5h）。<b>确认扛得住了才往上加，别提前跳档。</b>习惯站住比学得快重要——你已经推迟过几次了，这次我们用最低的门槛让它先跑起来。</p>
+    <p><b>每天两段弹性是故意空出来的：</b>上午一段（学超时/补觉/杂事兜底）、<b>晚上 22:00–23:00 整段归你自己</b>——陪女朋友、洗澡、放空都行。写脚本已经挪到白天上班时段，所以<b>晚上不欠任何任务</b>。有弹性，计划才不会一被打断就崩；恋爱不是计划的敌人，没留白才是。</p>
+    <p><b>周日整天休息</b>，只留一条随手拍的口播（15 分钟）。周六照常上班。</p>
     <button class="reset" id="reset">清空所有记录，重新开始</button>
   </div>
 </div>
@@ -348,49 +350,59 @@ const CAT={
   offer:{c:"var(--c-offer)",l:"Offer线"}
 };
 const SCHEDULE=[
-  {full:"2026-08-21",d:"08/21",wd:"周五",type:"study",csapp:"第1章·计算机系统漫游（通读+笔记）",ai:"通读 01-Agent"},
-  {full:"2026-08-22",d:"08/22",wd:"周六",type:"play"},
+  {full:"2026-08-21",d:"08/21",wd:"周五",type:"study",load:1,csapp:"第1章·计算机系统漫游（先读一半）",ai:"通读 01-Agent（前半）"},
+  {full:"2026-08-22",d:"08/22",wd:"周六",type:"study",load:1,csapp:"第1章读完 + 记 5 条笔记",ai:"通读 01-Agent（读完）"},
   {full:"2026-08-23",d:"08/23",wd:"周日",type:"play"},
-  {full:"2026-08-24",d:"08/24",wd:"周一",type:"study",csapp:"2.1 信息存储·进制/字节序",ai:"通读 02-RAG"},
-  {full:"2026-08-25",d:"08/25",wd:"周二",type:"study",csapp:"2.1 位运算练习",ai:"通读 03-工具调用"},
-  {full:"2026-08-26",d:"08/26",wd:"周三",type:"study",csapp:"2.2 整数表示·补码",ai:"通读 04-必问项"},
-  {full:"2026-08-27",d:"08/27",wd:"周四",type:"study",csapp:"2.2 练习",ai:"精读 01-Agent（ReAct 原理）"},
-  {full:"2026-08-28",d:"08/28",wd:"周五",type:"study",csapp:"2.3 整数运算·溢出",ai:"✍️ 手写 ReAct（对照 code）"},
-  {full:"2026-08-29",d:"08/29",wd:"周六",type:"play"},
+  {full:"2026-08-24",d:"08/24",wd:"周一",type:"study",load:1,csapp:"2.1 信息存储·进制/字节序",ai:"通读 02-RAG（前半）"},
+  {full:"2026-08-25",d:"08/25",wd:"周二",type:"study",load:1,csapp:"2.1 位运算（看例子就行）",ai:"通读 02-RAG（读完）"},
+  {full:"2026-08-26",d:"08/26",wd:"周三",type:"study",load:1,csapp:"2.1 练习 3 道",ai:"通读 03-工具调用"},
+  {full:"2026-08-27",d:"08/27",wd:"周四",type:"study",load:1,csapp:"2.2 整数表示·补码",ai:"通读 04-必问项"},
+  {full:"2026-08-28",d:"08/28",wd:"周五",type:"study",load:1,csapp:"2.2 练习 3 道",ai:"精读 01-Agent（ReAct 原理）"},
+  {full:"2026-08-29",d:"08/29",wd:"周六",type:"study",load:1,light:true,csapp:"本周查漏（累就只翻笔记）",ai:"本周复习 + 第一周复盘"},
   {full:"2026-08-30",d:"08/30",wd:"周日",type:"play"},
-  {full:"2026-08-31",d:"08/31",wd:"周一",type:"study",csapp:"2.3 练习",ai:"✍️ 脱稿手写 ReAct"},
-  {full:"2026-09-01",d:"09/01",wd:"周二",type:"study",csapp:"2.4 浮点数·IEEE 754",ai:"精读 02-RAG（切割/Rerank）"},
-  {full:"2026-09-02",d:"09/02",wd:"周三",type:"study",csapp:"2.4 练习 + 第2章小结",ai:"✍️ 手写 RAG Pipeline（对照 code）"},
-  {full:"2026-09-03",d:"09/03",wd:"周四",type:"study",csapp:"Data Lab 入门",ai:"✍️ 脱稿手写 RAG Pipeline"},
-  {full:"2026-09-04",d:"09/04",wd:"周五",type:"study",light:true,csapp:"Data Lab（累就跳）",ai:"03/04 复习 + Function Calling 手写"},
-  {full:"2026-09-05",d:"09/05",wd:"周六",type:"play"},
+  {full:"2026-08-31",d:"08/31",wd:"周一",type:"study",load:2,csapp:"2.3 整数运算·溢出",ai:"✍️ 手写 ReAct（对照 code）"},
+  {full:"2026-09-01",d:"09/01",wd:"周二",type:"study",load:2,csapp:"2.3 练习",ai:"✍️ 脱稿手写 ReAct"},
+  {full:"2026-09-02",d:"09/02",wd:"周三",type:"study",load:2,csapp:"2.4 浮点数·IEEE 754",ai:"精读 02-RAG（切割/Rerank）"},
+  {full:"2026-09-03",d:"09/03",wd:"周四",type:"study",load:2,csapp:"2.4 练习",ai:"✍️ 手写 RAG Pipeline（对照 code）"},
+  {full:"2026-09-04",d:"09/04",wd:"周五",type:"study",load:2,csapp:"第2章小结",ai:"✍️ 脱稿手写 RAG Pipeline"},
+  {full:"2026-09-05",d:"09/05",wd:"周六",type:"study",load:2,light:true,csapp:"缓冲：没跟上的补，跟上了预习第6章",ai:"03/04 复习 + 定下一程"},
   {full:"2026-09-06",d:"09/06",wd:"周日",type:"play"},
-  {full:"2026-09-07",d:"09/07",wd:"周一",type:"study",csapp:"Data Lab 收尾 + 第2章总复习",ai:"必问项自测 + 把项目讲成面试语言"},
-  {full:"2026-09-08",d:"09/08",wd:"周二",type:"study",csapp:"第2章查漏 + 第6章预习（有余力）",ai:"模拟面试自测 + 复盘、定下一程"},
 ];
-const TLC={life:"var(--c-life)",en:"var(--c-en)",sport:"var(--c-sport)",media:"var(--c-media)",csapp:"var(--c-csapp)",ai:"var(--c-ai)",proj:"var(--c-proj)",play:"var(--c-play)",offer:"var(--c-offer)"};
-const STUDY_TL=[
-  {s:"07:00",e:"07:30",cat:"media",bits:true,a:"起床洗漱 + 边吃早餐边刷同行内容，记 3 个选题进灵感池",n:"自媒体的原料档：只收集不创作。今天洗稿写脚本全靠这半小时攒的料"},
-  {s:"07:30",e:"08:30",cat:"en",work:true,a:"英语听说 1h：影子跟读 30min + AI 语音对话 30min",n:"练听说最强组合；不背单词、张嘴才算数。工具：每日英语听力 / ELSA / ChatGPT 语音"},
-  {s:"08:30",e:"10:00",cat:"sport",a:"运动 1.5h，中途抽 15min 拍今天的口播（脚本昨晚已写好）",n:"运动给大脑点火；口播早上拍完晚上就不欠；非拍摄时耳机泛听英文或行业播客"},
-  {s:"10:00",e:"10:30",cat:"life",a:"洗澡、换衣、高蛋白早餐",n:"运动后补蛋白，收拾干净进入学习状态"},
-  {s:"10:30",e:"12:00",cat:"csapp",work:true,a:"CSAPP 深度学习 1.5h（全天最硬的骨头）",n:"运动完+洗完澡+吃饱=脑子最清醒的黄金档，把最费脑的钉在这；手机扔到够不着的地方"},
-  {s:"12:00",e:"12:30",cat:"media",bits:true,a:"午饭（边吃边刷 AI / 外贸圈最新资讯）",n:"零碎输入档：看到能用的观点、案例、数据，随手存进灵感池"},
-  {s:"12:30",e:"13:00",cat:"media",bits:true,a:"通勤上班（耳机听 AI 播客 / 行业资讯）",n:"通勤是白捡的输入时间，别刷娱乐。准点 13:00 到"},
-  {s:"13:00",e:"13:30",cat:"life",a:"到岗先午睡 20min，醒来列今日 top3",n:"餐后最困的半小时干脆睡掉它，醒来用清单低摩擦开工"},
-  {s:"13:30",e:"15:30",cat:"ai",work:true,a:"AI/八股学习 2h（雷打不动）",n:"一上班就先锁死 AI，别被项目救火吃掉；趁「上班能摸鱼」合法学，绝不拖到疲惫的晚上"},
-  {s:"15:30",e:"16:00",cat:"media",work:true,a:"自媒体产线：剪辑 + 发布今天的口播 + 回评论",n:"发出去>发得好，别陷进精剪；回评论是最省力的涨粉动作"},
-  {s:"16:00",e:"16:30",cat:"offer",work:true,a:"出路固定档：投一份简历 / 或推进一笔变现",n:"两条路每天都要动一下——这半小时决定 90 天后你在哪；谁先出结果就走谁"},
-  {s:"16:30",e:"18:00",cat:"proj",work:true,a:"项目开发 1.5h（交付到合格线就停）",n:"把它当付你工资的客户，心从里面撤出来，力气留给你自己的两条出路"},
-  {s:"18:00",e:"18:30",cat:"life",a:"晚饭",n:""},
-  {s:"18:30",e:"19:00",cat:"media",bits:true,a:"散步消食 + 定明天的选题（口播没拍成就在这补拍）",n:"边走边想比坐着憋脚本高效；把明天要讲的那句话想清楚"},
-  {s:"19:00",e:"21:30",cat:"proj",work:true,a:"项目开发 2.5h，末尾 commit + 写明日 top3",n:"只做熟悉、有正反馈的活；想好明天第一步，降低次日启动摩擦"},
-  {s:"21:30",e:"22:00",cat:"media",bits:true,a:"下班通勤（听资讯 / 口播最后补拍档）",n:"今天还没发口播的话，车里是最后 backup"},
-  {s:"22:00",e:"22:30",cat:"life",a:"洗澡",n:""},
-  {s:"22:30",e:"23:00",cat:"media",work:true,a:"写明天的脚本 / 洗稿一条（30min）",n:"脚本前一晚写好，第二天拍摄只要 15 分钟——这是日更能不断的唯一关键；顺手备好明早运动服"},
-];
+const TLC={life:"var(--c-life)",en:"var(--c-en)",sport:"var(--c-sport)",media:"var(--c-media)",csapp:"var(--c-csapp)",ai:"var(--c-ai)",proj:"var(--c-proj)",play:"var(--c-play)",offer:"var(--c-offer)",flex:"var(--c-play)"};
+const LOADS={
+  1:{en:30,csapp:60,ai:90,name:"热身档",tip:"第一周只求「每天都碰到」，不求学多少"},
+  2:{en:30,csapp:90,ai:90,name:"进阶档",tip:"习惯站稳了，把 CSAPP 加到 1.5h"},
+  3:{en:60,csapp:90,ai:120,name:"满档",tip:"确认扛得住了才开这档，别提前跳"}
+};
+function hm(m){return String(Math.floor(m/60)).padStart(2,"0")+":"+String(m%60).padStart(2,"0");}
+function buildStudyTL(day){
+  const L=LOADS[day.load||1],R=[];
+  let t=420; // 07:00
+  const push=(dur,cat,a,n,flag)=>{const o={s:hm(t),e:hm(t+dur),cat:cat,a:a,n:n||""};if(flag)o[flag]=true;R.push(o);t+=dur;};
+  push(30,"media","起床洗漱 + 边吃早餐边刷同行内容，记 2 个选题","自媒体的原料档：只收集不创作，随手丢进灵感池","bits");
+  push(L.en,"en","英语听说 "+(L.en>=60?"1h：影子跟读 30min + AI 语音对话 30min":"30min：影子跟读或 AI 语音对话，二选一"),"张嘴才算数。工具：每日英语听力 / ELSA / ChatGPT 语音","work");
+  push(90,"sport","运动 1.5h，中途抽 15min 拍今天的口播","运动给大脑点火；口播早上拍完晚上就不欠");
+  push(30,"life","洗澡、换衣、早餐","运动后补蛋白，收拾干净进入状态");
+  push(L.csapp,"csapp","CSAPP："+day.csapp+"（"+(L.csapp/60)+"h）","脑子最清醒的黄金档，把最费脑的钉在这；手机扔到够不着的地方","work");
+  const flex=720-t;
+  if(flex>0)push(flex,"flex","弹性 "+flex+"min：陪女朋友 / 补觉 / 处理杂事 / 学超时了在这兜底","这段是<b>故意空出来的</b>——有事就用掉，没事就多学会儿。有它，计划才不会一被打断就崩");
+  push(30,"media","午饭（边吃边刷 AI / 外贸圈资讯）","零碎输入档，看到能用的存进灵感池","bits");
+  push(30,"media","通勤上班（耳机听播客 / 行业资讯）","通勤是白捡的输入时间。准点 13:00 到","bits");
+  push(30,"life","到岗先午睡 20min，醒来列今日 top3","餐后最困的半小时干脆睡掉它");
+  push(L.ai,"ai","AI/八股："+day.ai+"（"+(L.ai/60)+"h）","一上班就先锁死 AI，趁「上班能摸鱼」合法学，绝不拖到疲惫的晚上","work");
+  push(30,"media","自媒体：剪辑 + 发布今天的口播 + 回评论","发出去>发得好，别陷进精剪","work");
+  push(30,"media","写明天的脚本 / 洗稿一条","挪到白天写，把晚上完整还给生活——这是日更不断的关键","work");
+  push(30,"offer","出路固定档：投一份简历 / 或推进一笔变现","两条路每天都要动一下；谁先出结果就走谁","work");
+  push(1080-t,"proj","项目开发（交付到合格线就停）","把它当付你工资的客户，心从里面撤出来","work");
+  push(30,"life","晚饭","");
+  push(30,"media","散步消食 + 定明天的选题","边走边想比坐着憋脚本高效","bits");
+  push(150,"proj","项目开发，末尾 commit + 写明日 top3","只做熟悉、有正反馈的活","work");
+  push(30,"media","下班通勤（听资讯 / 口播最后补拍档）","今天还没发口播的话，车里是最后 backup","bits");
+  push(60,"flex","<b>晚上归你自己</b>：陪女朋友 / 洗澡 / 彻底放松","脚本白天写完了，晚上不欠任何任务。23:00 睡，睡满 8h");
+  return R;
+}
 const PLAY_TL=[
-  {s:"07:30",e:"08:00",cat:"life",a:"自然醒后起床、喝水洗漱",n:"周末多睡会儿回血，但别赖到中午睡乱生物钟——周一还要 07:00 起"},
+  {s:"07:30",e:"08:00",cat:"life",a:"自然醒后起床、喝水洗漱",n:"周日多睡会儿回血，但别赖到中午睡乱生物钟——周一还要 07:00 起"},
   {s:"08:00",e:"08:30",cat:"en",a:"早餐边吃边泛听一集英文播客/视频",n:"玩乐日唯一保留的英语微习惯，纯被动听、零负担"},
   {s:"08:30",e:"09:00",cat:"life",a:"收拾出门",n:""},
   {s:"09:00",e:"12:30",cat:"play",a:"出去玩·上半场",n:"整天在外走路本身就把今天的运动量补了"},
@@ -401,7 +413,7 @@ const PLAY_TL=[
   {s:"19:00",e:"19:30",cat:"life",a:"到家、洗澡",n:""},
   {s:"19:30",e:"21:30",cat:"play",a:"到家彻底放松：瘫着、陪家人、刷剧",n:"整周的泄压阀，真休息，别有负罪感"},
   {s:"21:30",e:"22:30",cat:"play",a:"自由时间",n:""},
-  {s:"22:30",e:"23:00",cat:"life",a:"洗漱、备好明早的东西，调暗灯准备睡",n:"周末也 23:00 睡，别把生物钟熬乱，下周一才起得来"},
+  {s:"22:30",e:"23:00",cat:"life",a:"洗漱、备好明早的东西，调暗灯准备睡",n:"周日也 23:00 睡，别把生物钟熬乱，周一才起得来"},
 ];
 const LIGHT_NOTE="🌙 机动日：只砍强度不砍地板线。一条口播、学 10 分钟、动一下 offer 线，这三件雷打不动；运动缩成 30min 快走，CSAPP 只复习昨天笔记，AI 砍到 1h。把今天过成每件事的「最小可行版」，别直接躺平清零。";
 
@@ -540,12 +552,7 @@ function renderDay(){
 }
 function timelineFor(day){
   if(day.type==="play")return PLAY_TL.map(r=>Object.assign({},r));
-  return STUDY_TL.map(r=>{
-    const x=Object.assign({},r);
-    if(r.cat==="csapp")x.a="CSAPP："+day.csapp+"（1.5h）";
-    if(r.cat==="ai")x.a="AI/八股："+day.ai+"（2h）";
-    return x;
-  });
+  return buildStudyTL(day);
 }
 function mins(t){const p=t.split(":");return +p[0]*60+ +p[1];}
 function tlHours(rows){
